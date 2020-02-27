@@ -1,0 +1,1 @@
+electron-packager app/ --icon=app/favicon.ico --prune=true --version-string.ProductName="Calque"
