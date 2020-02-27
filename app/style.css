@@ -1,18 +1,19 @@
 body {
     margin: 0;
     padding: 0;
+    color: var(--foreground);
 }
 
 .interface {
+    background-color: var(--background);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
+    font-family: 'Menlo', 'Monaco', courier, monospace;
 }
 
-.interface .input, .interface .output {
+.input, .output {
     position: absolute;
     top: 0;
     right: 0;
@@ -20,64 +21,63 @@ body {
     width: 100%;
     border: none;
     margin: 0;
-    font-family: 'Menlo', 'Monaco', courier, monospace;
     font-size: 16px;
     line-height: 1.5;
     box-sizing: border-box;
     white-space: pre-wrap;
     word-break: break-word;
+    overflow: hidden;
 }
 
-.interface .input {
-    overflow: auto;
+.input {
     outline: none;
     background: none;
     resize: none;
     padding: 20px;
+    color: var(--foreground);
 }
 
-.interface .output {
-    overflow: hidden;
+.output {
     padding: 20px 0;
 }
 
-.interface .output div {
+.output div {
     display: block;
     padding: 0 20px;
 }
 
-.interface .output div.highlight {
-    background-color: #f9f9f9;
+.output div.highlight {
+    background-color: var(--highlight);
 }
 
-.interface .output .code {
-    color: #E9E9E9;
+.output .code {
+    color: var(--markup);
 }
 
-.interface .output .code:before {
+.output .code:before {
     content: attr(data-code);
 }
 
-.interface .output .hint:before {
+.output .hint:before {
     content: attr(data-prefix);
-    color: #E9E9E9;
+    color: var(--markup);
     white-space: pre;
 }
 
-.interface .output .hint {
+.output .hint {
     z-index: 1;
     position: absolute;
     white-space: pre;
 }
 
-.interface .output .help {
-    color: silver;
+.output .help {
+    color: var(--results);
 }
 
-.interface .output .result {
-    color: silver;
+.output .result {
+    color: var(--results);
 }
 
-.interface .output .error {
-    color: red;
+.output .error {
+    color: var(--error);
 }
