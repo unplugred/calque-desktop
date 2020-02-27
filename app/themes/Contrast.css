@@ -1,0 +1,8 @@
+:root {
+	--background: black;
+	--foreground: white;
+	--markup: #444;
+	--highlight: #111;
+	--results: #0087D7;
+	--error: #FF0000;
+}
