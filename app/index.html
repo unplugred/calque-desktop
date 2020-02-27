@@ -7,20 +7,6 @@
     <link rel="icon" type='image/png' href="favicon.png">
     <link rel="stylesheet" href="Dark.css">
     <link rel="stylesheet" href="style.css">
-    <script src="math.min.js"></script>
-    <script src="calque.js"></script>
-    <script>
-        window.onload = function () {
-            var input = document.getElementById('input');
-            if (localStorage.getItem("input")) {
-                input.value = localStorage.getItem("input");
-            }
-
-            var output = document.getElementById('output');
-            window.calque = new Calque(input, output);
-            input.focus();
-        }
-    </script>
     <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -70,5 +56,20 @@ last + 1
 # https://github.com/grimalschi/mathjs</textarea>
     </div>
     <div class="top"></div>
+
+    <script src="math.min.js"></script>
+    <script src="calque.js"></script>
+    <script>
+        window.onload = function () {
+            var input = document.getElementById('input');
+            if (localStorage.getItem("input")) {
+                input.value = localStorage.getItem("input");
+            }
+
+            var output = document.getElementById('output');
+            window.calque = new Calque(input, output);
+            input.focus();
+        }
+    </script>
 </body>
 </html>
