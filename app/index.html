@@ -57,9 +57,22 @@ last + 1
     </div>
     <div class="top"></div>
 
-    <script src="math.min.js"></script>
-    <script src="calque.js"></script>
     <script>
+        const contextMenu = require('electron-context-menu');
+        contextMenu({
+            menu: actions => [
+                actions.copy(),
+                actions.cut(),
+                actions.paste(),
+                actions.separator(),
+                { role: 'zoomIn' },
+                { role: 'zoomOut' },
+                { role: 'resetZoom', label: 'Reset Zoom' },
+                actions.separator(),
+                { role: 'quit' }
+            ]
+        });
+
         window.onload = function () {
             var input = document.getElementById('input');
             if (localStorage.getItem("input")) {
@@ -71,5 +84,7 @@ last + 1
             input.focus();
         }
     </script>
+    <script src="math.min.js"></script>
+    <script src="calque.js"></script>
 </body>
 </html>
