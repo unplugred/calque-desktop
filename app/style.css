@@ -24,6 +24,13 @@ body {
     color: var(--foreground);
 }
 
+.top {
+    -webkit-app-region: drag;
+    width: 100vw;
+    height: 20px;
+    position: fixed;
+}
+
 .interface {
     border-radius: 10px;
     background-color: var(--background);
