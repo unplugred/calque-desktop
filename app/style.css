@@ -25,6 +25,7 @@ body {
 }
 
 .interface {
+    border-radius: 10px;
     background-color: var(--background);
     width: 100vw;
     height: 100vh;
