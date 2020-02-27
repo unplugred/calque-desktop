@@ -1,3 +1,23 @@
+::selection {
+    color: var(--background);
+    background: var(--foreground);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--foreground);
+    border: 3px var(--background) solid;
+    border-radius: 6px;
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
