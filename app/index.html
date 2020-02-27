@@ -55,9 +55,20 @@ last + 1
 # Using Math.js:
 # https://github.com/grimalschi/mathjs</textarea>
     </div>
-    <div class="top"></div>
+    <div class="top">
+        <div id="close" class="icon"></div>
+        <div id="min" class="icon"></div>
+    </div>
 
     <script>
+        const remote = require('electron').remote;
+        document.getElementById("min").addEventListener("click", function (e) {
+            remote.getCurrentWindow().minimize();
+        });
+        document.getElementById("close").addEventListener("click", function (e) {
+            remote.getCurrentWindow().close();
+        });
+
         const contextMenu = require('electron-context-menu');
         contextMenu({
             menu: actions => [

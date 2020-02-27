@@ -26,7 +26,7 @@ body {
 
 .top {
     -webkit-app-region: drag;
-    width: 100vw;
+    width: calc(100vw - 65px);
     height: 20px;
     position: fixed;
 }
@@ -108,4 +108,57 @@ body {
 
 .output .error {
     color: var(--error);
+}
+
+.icon {
+    opacity: 0;
+    color: var(--foreground);
+    position: fixed;
+    transition: opacity .3s;
+}
+body:hover .icon {
+    opacity: 1!important;
+}
+.top:hover .icon {
+    opacity: 1!important;
+}
+
+#close {
+    width: 20px;
+    height: 14px;
+    padding-top: 11px;
+    padding-left: 5px;
+    right: 10px;
+    top: 10px;
+}
+#close:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: currentColor;
+    transform: rotate(45deg);
+}
+#close:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: currentColor;
+    transform: rotate(-45deg);
+}
+#min {
+    right: 40px;
+    top: 10px;
+    width: 19px;
+    height: 14px;
+    padding-top: 11px;
+    padding-left: 6px;
+}
+#min:after {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 2px;
+    background-color: currentColor;
 }
