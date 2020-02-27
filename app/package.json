@@ -1,5 +1,5 @@
 {
-	"name": "typecalc",
+	"name": "Calque Desktop",
 	"version": "1.0.0",
 	"dependencies": {
 		"electron-context-menu": "^0.16.0"
