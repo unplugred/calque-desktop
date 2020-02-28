@@ -23,7 +23,7 @@
             "target": "AppImage"
         },
         "win": {
-            "target": "portable",
+            "target": "zip",
             "icon": "build/favicon.ico"
         },
         "mac": {
