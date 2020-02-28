@@ -6,10 +6,30 @@
     },
     "devDependencies": {
         "electron": "^8.0.2",
-        "electron-packager": "^14.2.1"
+        "electron-builder": "^22.3.2"
     },
     "main": "run.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "build": "electron-builder -mwl"
+    },
+    "build": {
+        "appId": "com.unplugred.calque",
+        "directories": {
+            "buildResources": "."
+        },
+        "linux": {
+            "category": "Utility",
+            "target": "AppImage"
+        },
+        "win": {
+            "target": "portable",
+            "icon": "build/favicon.ico"
+        },
+        "mac": {
+            "category": "public.app-category.productivity",
+            "target": "dmg",
+            "icon": "build/favicon.icns"
+        }
     }
 }
