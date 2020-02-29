@@ -77,7 +77,7 @@ Zoom out: Ctrl+Minus
 
 Fork of Calque:
 
-https://github.com/grimalschi/calquep
+https://github.com/grimalschi/calque
 
 Using Math.js:
 
