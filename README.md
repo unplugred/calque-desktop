@@ -1,6 +1,10 @@
-<img src="resources/favicon150.png">
+<img src="resources/logo.png" height="70px">
 
 The desktop port of Calque, the reactive calculator
+
+Cliche screenshot on top of a royalty free mountain picure:
+
+<img src="resources/screenshot.png" title="Background image by Konstantin Kleine on Unsplash">
 
 ## Expressions
 
@@ -48,8 +52,9 @@ last + 1
 
 ## Themes
 
-Themes can be changed via the right click menu
+Themes can be changed via the right click menu.
 
+<img src="resources/themes.png">
 
 ## Keys
 
@@ -74,5 +79,3 @@ https://github.com/grimalschi/calquep
 Using Math.js:
 
 https://github.com/grimalschi/mathjs
-
-To whoever is reading this, I love you <3
