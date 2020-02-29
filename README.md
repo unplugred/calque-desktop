@@ -7,6 +7,7 @@ Cliche screenshot on top of a royalty free mountain picure:
 ## Download
 
 The software can be downloaded <a href="https://github.com/unplugred/calque-desktop/releases">from the Releases tab</a>
+and a demo can be <a href="https://unplugred.github.io/calque-desktop/">tried here</a>
 
 ## Expressions
 
