@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calque</title>
+    <link rel="icon" type='image/png' href="app/favicon.png">
+    <link rel="stylesheet" href="app/themes/dark.css">
+    <link rel="stylesheet" href="app/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url("resources/background-by-konstantin-kleine.jpg");
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+
+        body,html {
+            overflow: hidden;
+        }
+
+        .interface {
+            width: 50vw;
+            height: 50vh;
+            margin: 23vh 25vw;
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
+        }
+
+        #download {
+            top: 74vh;
+            left: calc(75vw - 15vh);
+            width: 15vh;
+            height: 5vh;
+            line-height: 5vh;
+            display: block;
+            position: fixed;
+            font-size: 2vmin;
+            font-family: 'Oxygen Mono', monospace;
+            text-align: center;
+            background-color: #2d2a2e;
+            color: #e3e1e4;
+            border-radius: 5px;
+            box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+            transition: .3s background-color;
+            text-decoration: none;
+        }
+
+        #download:hover {
+            background-color: #3a353b;
+        }
+
+        #logo {
+            height: 5vh;
+            margin: 17vh 25vw;
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="resources/logo.png" />
+    <a href="https://github.com/unplugred/calque-desktop/releases" id="download">Download</a>
+    <div class="interface">
+        <div class="output" id="output"></div>
+        <textarea class="input" id="input"># Calque - reactive calculator
+
+# Expressions
+2 + 2 * 2
+sqrt(3^2 + 4^2)
+2 inch to cm
+cos(45 deg)
+
+# Variables
+a = 25
+b = a * 2
+postal code = 1122
+
+# Summing lists
+animals:
+  cats = 2
+  dogs = 3
+plants:
+  trees = 20
+  vegetables:
+    potatoes = 10
+    carrots = 10
+
+# Functions
+pow2(x) = x ^ 2
+pow2(6)
+
+# Last result
+2 * 2
+last + 1
+
+# Keys
+# Duplicate line or selection: Ctrl+D
+# Change selected number: Up/Down
+# Change selected number 10x: Shift+Up/Down
+# Change indent: Tab/Shift+Tab
+# Zoom in: Ctrl+Shift+Plus
+# Zoom out: Ctrl+Minus
+
+# Themes can be changed via the right click menu. (only in desktop app)
+
+# Calque Desktop on Github
+# https://github.com/unplugred/calque-desktop
+
+# Fork of Calque:
+# https://github.com/grimalschi/calque
+
+# Using Math.js:
+# https://github.com/grimalschi/mathjs</textarea>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var input = document.getElementById('input');
+            if (localStorage.getItem("input"))
+                input.value = localStorage.getItem("input");
+
+            var output = document.getElementById('output');
+            window.calque = new Calque(input, output);
+            input.focus();
+        }
+    </script>
+    <script src="app/math.min.js"></script>
+    <script src="app/calque.js"></script>
+</body>
+</html>
