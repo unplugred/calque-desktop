@@ -1,10 +1,8 @@
-<div style="text-align:center"><img src="resources/logo.png" height="70px">
-
-The desktop port of Calque, the reactive calculator</div>
+<p align="center"><img src="resources/logo.png" height="70px"><br/><b>The desktop port of Calque, the reactive calculator</b></p>
 
 Cliche screenshot on top of a royalty free mountain picure:
 
-<div style="text-align:center"><img src="resources/screenshot.png" title="Background image by Konstantin Kleine on Unsplash"></div>
+<p align="center"><img src="resources/screenshot.png" title="Background image by Konstantin Kleine on Unsplash"></p>
 
 ## Expressions
 
@@ -54,7 +52,7 @@ last + 1
 
 Themes can be changed via the right click menu.
 
-<div style="text-align:center"><img src="resources/themes.png"></div>
+<p align="center"><img src="resources/themes.png"></p>
 
 ## Keys
 
