@@ -4,6 +4,10 @@ Cliche screenshot on top of a royalty free mountain picure:
 
 <p align="center"><img src="resources/screenshot.png" title="Background image by Konstantin Kleine on Unsplash"></p>
 
+## Download
+
+The software can be downloaded <a href="https://github.com/unplugred/calque-desktop/releases">from the Releases tab</a>
+
 ## Expressions
 
 ```
