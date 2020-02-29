@@ -1,14 +1,14 @@
-<img src="logo.png" width="169px">
+<img src="resources/favicon150.png">
 
-Reactive calculator
+The desktop port of Calque, the reactive calculator
 
 ## Expressions
 
 ```
-2 inch to cm
-cos(45 deg)
 2 + 2 * 2
 sqrt(3^2 + 4^2)
+2 inch to cm
+cos(45 deg)
 ```
 
 ## Variables
@@ -46,6 +46,11 @@ pow2(6)
 last + 1
 ```
 
+## Themes
+
+Themes can be changed via the right click menu
+
+
 ## Keys
 
 Duplicate line or selection: Ctrl+D
@@ -56,6 +61,18 @@ Change selected number 10x: Shift+Up/Down
 
 Change indent: Tab/Shift+Tab
 
-## Using Math.js:
+Zoom in: Ctrl+Shift+Plus
+
+Zoom out: Ctrl+Minus
+
+## Technologies
+
+Fork of Calque:
+
+https://github.com/grimalschi/calquep
+
+Using Math.js:
 
 https://github.com/grimalschi/mathjs
+
+To whoever is reading this, I love you <3
