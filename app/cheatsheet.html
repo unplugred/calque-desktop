@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cheat Sheet</title>
+    <link rel="icon" type='image/png' href="favicon.png">
+    <link rel="stylesheet" id="thm" href="">
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="interface">
+        <h1>Cheet Sheet</h1>
+
+        <hr>
+
+        <h2>Expressions</h2>
+        <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
+        <pre data-result=" = 2i">sqrt(-4)</pre>
+        <pre data-result=" = 5.08 cm">2 inch to cm</pre>
+        <pre data-result=" = 0.70711">cos(45 deg)</pre>
+
+        <h2>Variables</h2>
+        <pre data-result=" = 6">a = 2 + 2 * 2</pre>
+        <pre data-result=" = 5">b = a - 1</pre>
+        <pre data-result=" = 30">a * b</pre>
+
+        <h2>Functions</h2>
+        <pre data-result=" fn">pow2(x) = x ^ 2</pre>
+        <pre data-result=" = 36">pow2(6)</pre>
+
+        <h2>Comments</h2>
+        <pre># This is a comment</pre>
+        <pre data-result=" = 4">a = 2 * 2 # And this</pre>
+
+        <h2>Last result</h2>
+        <pre data-result=" = 4">2 * 2</pre>
+        <pre data-result=" = 5">last + 1</pre>
+
+        <hr>
+
+        <p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
+        <p>View on <a target="_blank" href="https://github.com/keyten/calque">GitHub</a><br/><small>(fork of <a href="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
+    </div>
+    <div class="top">
+        <div id="close" class="icon"></div>
+        <div id="min" class="icon"></div>
+    </div>
+    <script src="theme.js"></script>
+    <script>
+        const remote = require('electron').remote;
+        document.getElementById("min").addEventListener("click", function (e) {
+            remote.getCurrentWindow().minimize();
+        });
+        document.getElementById("close").addEventListener("click", function (e) {
+            remote.getCurrentWindow().hide();
+        });
+
+        setInterval(updatetheme, 1000);
+    </script>
+</body>
+</html>
