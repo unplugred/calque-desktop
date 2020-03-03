@@ -13,6 +13,7 @@
     <div class="interface">
         <div class="output" id="output"></div>
         <textarea class="input" id="input"># Calque - reactive calculator
+# (cheat sheet is available via right click menu)
 
 # Expressions
 2 + 2 * 2
@@ -65,29 +66,22 @@ last + 1
     <div class="top">
         <div id="close" class="icon"></div>
         <div id="min" class="icon"></div>
+        <div id="settings" class="icon"></div>
     </div>
 
     <script src="theme.js"></script>
     <script>
         const remote = require('electron').remote;
-        document.getElementById("min").addEventListener("click", function (e) {
-            remote.getCurrentWindow().minimize();
-        });
-        document.getElementById("close").addEventListener("click", function (e) {
-            remote.getGlobal("closee")();
-        });
-
         const contextMenu = require('electron-context-menu');
-        contextMenu({
-            menu: actions => [
-                actions.copy(),
-                actions.cut(),
-                actions.paste(),
-                actions.separator(),
+        const template = [
+                { role: 'copy' },
+                { role: 'cut' },
+                { role: 'paste' },
+                { type: 'separator' },
                 { role: 'zoomIn' },
                 { role: 'zoomOut' },
                 { role: 'resetZoom', label: 'Reset Zoom' },
-                actions.separator(),
+                { type: 'separator' },
                 {
                     label: 'Cheat Sheet',
                     click: (menuItem, BrowserWindow, event) => {
@@ -142,8 +136,13 @@ last + 1
                     ]
                 },
                 { role: 'quit' }
-            ]
-        });
+        ];
+        const menuu = remote.Menu.buildFromTemplate(template);
+        contextMenu({ menu: actions => template });
+
+        document.getElementById("min").addEventListener("click", function (e) { remote.getCurrentWindow().minimize(); });
+        document.getElementById("close").addEventListener("click", function (e) { remote.getGlobal("closee")(); });
+        document.getElementById("settings").addEventListener("click", function (e) { menuu.popup(); });
 
         window.onload = function () {
             loadtheme();
