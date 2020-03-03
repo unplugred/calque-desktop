@@ -1,5 +1,9 @@
+* {
+    transition: background-color .2s, color .2s;
+}
+
 ::selection {
-    color: var(--background);
+    color: var(--highlight);
     background: var(--foreground);
 }
 
