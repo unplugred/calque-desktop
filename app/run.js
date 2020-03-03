@@ -28,6 +28,10 @@ function openwin(){
         minWidth: 388,
         maxWidth: 388
     });
+    cs.webContents.on('new-window', function(e, url) {
+        e.preventDefault();
+        require('electron').shell.openExternal(url);
+    });
     cs.hide();
     cs.loadURL("file://" + __dirname + "/cheatsheet.html");
 };
