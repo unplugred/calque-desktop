@@ -1,5 +1,5 @@
 {
-    "name": "CalqueDesktop",
+    "name": "Calque",
     "version": "1.1.0",
     "dependencies": {
         "electron-context-menu": "^0.16.0"
@@ -20,7 +20,8 @@
         },
         "linux": {
             "category": "Utility",
-            "target": "AppImage"
+            "target": "AppImage",
+            "icon": "build/favicon.png"
         },
         "win": {
             "target": "zip",
