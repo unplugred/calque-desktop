@@ -26,13 +26,13 @@ function openwin(){
         webPreferences: { nodeIntegration: true },
         width: 388,
         minWidth: 388,
-        maxWidth: 388
+        maxWidth: 388,
+        show: false
     });
     cs.webContents.on('new-window', function(e, url) {
         e.preventDefault();
         require('electron').shell.openExternal(url);
     });
-    cs.hide();
     cs.loadURL("file://" + __dirname + "/cheatsheet.html");
 };
 
