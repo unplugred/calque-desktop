@@ -1,4 +1,4 @@
-var {app, BrowserWindow} = require('electron');
+var {app, BrowserWindow, screen} = require('electron');
 
 app.on('ready', function(){
     if(process.platform === "win32" || process.platform === "darwin")
@@ -36,7 +36,18 @@ function openwin(){
     cs.loadURL("file://" + __dirname + "/cheatsheet.html");
 };
 
+openedcheatsheet = false;
 global.cheatsheet = function(){
+    if(!openedcheatsheet) {
+        let bounds = win.getBounds();
+        let workarea = screen.getDisplayNearestPoint(bounds).workArea;
+        cs.setBounds({
+            height: bounds.height,
+            y: bounds.y,
+            x: Math.min(bounds.x + bounds.width, workarea.x + workarea.width - 388)
+        });
+        openedcheatsheet = true;
+    }
     cs.show();
 }
 global.closee = function(){
