@@ -6,20 +6,25 @@
     color: var(--highlight);
     background: var(--foreground);
 }
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
+.simplebar-scrollbar:before {
     background-color: var(--foreground);
-    border: 3px var(--highlight) solid;
     border-radius: 6px;
-    outline: none;
+    left: 2px;
+    right: 3px;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top: 5px;
+    bottom: 5px;
+}
+#scroll {
+    height: 100vh;
+    border-radius: 10px;
+    background-color: var(--highlight);
+	width: 100vw;
+	position: absolute;
 }
 
 body {
@@ -38,12 +43,8 @@ body {
 }
 
 .interface {
-    border-radius: 10px;
-    background-color: var(--highlight);
-    width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
-    overflow-y: scroll;
-    position: absolute;
+    width: calc(100% - 52px);
+    overflow: hidden;
     padding: 20px;
 }
 
@@ -65,10 +66,7 @@ hr {
     position: fixed;
     transition: opacity .3s;
 }
-body:hover .icon {
-    opacity: 1!important;
-}
-.top:hover .icon {
+body:hover .icon, .top:hover .icon {
     opacity: 1!important;
 }
 
