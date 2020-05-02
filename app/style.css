@@ -6,20 +6,21 @@
     color: var(--background);
     background: var(--foreground);
 }
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
+.simplebar-scrollbar:before {
     background-color: var(--foreground);
-    border: 3px var(--background) solid;
     border-radius: 6px;
-    outline: none;
+    left: 2px;
+    right: 3px;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top: 5px;
+    bottom: 5px;
+}
+#scrollwrap {
+    height: 100%;
 }
 
 body {
@@ -41,7 +42,7 @@ body {
     background-color: var(--background);
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+    overflow: hidden;
     position: absolute;
 }
 
@@ -67,11 +68,13 @@ body {
     background: none;
     resize: none;
     padding: 20px;
+    height: inherit;
     color: var(--foreground);
 }
 
 .output {
     padding: 20px 0;
+    min-height: 100vh;
 }
 
 .output div {
@@ -121,10 +124,7 @@ body {
     position: fixed;
     transition: opacity .3s;
 }
-body:hover .icon {
-    opacity: 1!important;
-}
-.top:hover .icon {
+body:hover .icon, .top:hover .icon {
     opacity: 1!important;
 }
 

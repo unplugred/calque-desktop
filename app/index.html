@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calque</title>
     <link rel="icon" type='image/png' href="favicon.png">
+    <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.min.css">
     <link rel="stylesheet" id="thm" href="">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -30,8 +31,10 @@
 </head>
 <body>
     <div class="interface">
-        <div class="output" id="output"></div>
-        <textarea class="input" id="input"># Calque - reactive calculator
+        <div id="scrollwrap" data-simplebar data-simplebar-auto-hide="false">
+            <div id="wrap">
+                <div class="output" id="output"></div>
+                <textarea class="input" id="input"># Calque - reactive calculator
 # (cheat sheet is available via right click menu)
 
 # Expressions
@@ -81,6 +84,8 @@ last + 1
 
 # Using Math.js:
 # https://github.com/grimalschi/mathjs</textarea>
+            </div>
+        </div>
     </div>
     <div class="top">
         <div id="close" class="icon"></div>
@@ -170,11 +175,11 @@ last + 1
             if (localStorage.getItem("input"))
                 input.value = localStorage.getItem("input");
 
-            var output = document.getElementById('output');
-            window.calque = new Calque(input, output);
+            window.calque = new Calque(input, document.getElementById('output'));
             input.focus();
         }
     </script>
+    <script defer src="node_modules/simplebar/dist/simplebar.min.js"></script>
     <script defer src="math.min.js"></script>
     <script defer src="calque.js"></script>
 </body>

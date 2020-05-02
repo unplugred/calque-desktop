@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cheat Sheet</title>
     <link rel="icon" type='image/png' href="favicon.png">
+    <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.min.css">
     <link rel="stylesheet" id="thm" href="">
     <link rel="stylesheet" href="cheatsheet.css">
     <style>
@@ -29,39 +30,41 @@
     </style>
 </head>
 <body>
-    <div class="interface">
-        <h1>Cheat Sheet</h1>
+    <div id="scroll" data-simplebar data-simplebar-auto-hide="false">
+        <div class="interface">
+            <h1>Cheat Sheet</h1>
 
-        <hr>
+            <hr>
 
-        <h2>Expressions</h2>
-        <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
-        <pre data-result=" = 2i">sqrt(-4)</pre>
-        <pre data-result=" = 5.08 cm">2 inch to cm</pre>
-        <pre data-result=" = 0.70711">cos(45 deg)</pre>
+            <h2>Expressions</h2>
+            <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
+            <pre data-result=" = 2i">sqrt(-4)</pre>
+            <pre data-result=" = 5.08 cm">2 inch to cm</pre>
+            <pre data-result=" = 0.70711">cos(45 deg)</pre>
 
-        <h2>Variables</h2>
-        <pre data-result=" = 6">a = 2 + 2 * 2</pre>
-        <pre data-result=" = 5">b = a - 1</pre>
-        <pre data-result=" = 30">a * b</pre>
+            <h2>Variables</h2>
+            <pre data-result=" = 6">a = 2 + 2 * 2</pre>
+            <pre data-result=" = 5">b = a - 1</pre>
+            <pre data-result=" = 30">a * b</pre>
 
-        <h2>Functions</h2>
-        <pre data-result=" fn">pow2(x) = x ^ 2</pre>
-        <pre data-result=" = 36">pow2(6)</pre>
+            <h2>Functions</h2>
+            <pre data-result=" fn">pow2(x) = x ^ 2</pre>
+            <pre data-result=" = 36">pow2(6)</pre>
 
-        <h2>Comments</h2>
-        <pre># This is a comment</pre>
-        <pre data-result=" = 4">a = 2 * 2 # And this</pre>
+            <h2>Comments</h2>
+            <pre># This is a comment</pre>
+            <pre data-result=" = 4">a = 2 * 2 # And this</pre>
 
-        <h2>Last result</h2>
-        <pre data-result=" = 4">2 * 2</pre>
-        <pre data-result=" = 5">last + 1</pre>
+            <h2>Last result</h2>
+            <pre data-result=" = 4">2 * 2</pre>
+            <pre data-result=" = 5">last + 1</pre>
 
-        <hr>
+            <hr>
 
-        <p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
-        <p>View on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a><br/><small>(fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
-        <p>This Cheat Sheet was written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
+            <p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
+            <p>View on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a><br/><small>(fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
+            <p>This Cheat Sheet was written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
+        </div>
     </div>
     <div class="top">
         <div id="close" class="icon"></div>
@@ -79,5 +82,6 @@
 
         setInterval(updatetheme, 1000);
     </script>
+    <script defer src="node_modules/simplebar/dist/simplebar.min.js"></script>
 </body>
 </html>
