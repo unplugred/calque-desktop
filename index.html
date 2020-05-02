@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calque</title>
     <link rel="icon" type='image/png' href="app/favicon.png">
+    <link rel="stylesheet" href="app/node_modules/simplebar/dist/simplebar.min.css">
     <link rel="stylesheet" href="app/themes/Dark.css">
     <link rel="stylesheet" href="app/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet">
@@ -76,8 +77,10 @@
     <img id="logo" src="resources/logo.png" />
     <a href="https://github.com/unplugred/calque-desktop/releases" id="download">Download</a>
     <div class="interface">
-        <div class="output" id="output"></div>
-        <textarea class="input" id="input"># Calque - reactive calculator
+        <div id="scrollwrap" data-simplebar data-simplebar-auto-hide="false">
+            <div id="wrap">
+                <div class="output" id="output"></div>
+                <textarea class="input" id="input"># Calque - reactive calculator
 
 # Expressions
 2 + 2 * 2
@@ -126,6 +129,8 @@ last + 1
 
 # Using Math.js:
 # https://github.com/grimalschi/mathjs</textarea>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -134,12 +139,12 @@ last + 1
             if (localStorage.getItem("input"))
                 input.value = localStorage.getItem("input");
 
-            var output = document.getElementById('output');
-            window.calque = new Calque(input, output);
+            window.calque = new Calque(input, document.getElementById('output'));
             input.focus();
         }
     </script>
-    <script src="app/math.min.js"></script>
-    <script src="app/calque.js"></script>
+    <script defer src="app/node_modules/simplebar/dist/simplebar.min.js"></script>
+    <script defer src="app/math.min.js"></script>
+    <script defer src="app/calque.js"></script>
 </body>
 </html>
