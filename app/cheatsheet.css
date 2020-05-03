@@ -6,7 +6,7 @@
     background-color: var(--foreground);
     border-radius: 6px;
     left: 2px;
-    right: 3px;
+    right: 4px;
 }
 .simplebar-scrollbar.simplebar-visible:before {
     opacity: 1;
