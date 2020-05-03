@@ -5,8 +5,8 @@
         "simplebar": "^5.1.0"
     },
     "devDependencies": {
-        "electron": "^8.0.2",
-        "electron-builder": "^22.5.1"
+        "electron": "^8.2.5",
+        "electron-builder": "^22.6.0"
     },
     "main": "run.js",
     "scripts": {
