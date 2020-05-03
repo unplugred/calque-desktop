@@ -8,7 +8,7 @@ app.on('ready', function(){
 });
 
 function openwin(){
-    win = new BrowserWindow({
+    global.win = new BrowserWindow({
         title: "Calque",
         icon: "favicon.png",
         frame: false,
@@ -16,8 +16,8 @@ function openwin(){
         darkTheme: true,
         webPreferences: { nodeIntegration: true }
     });
-    win.loadURL("file://" + __dirname + "/index.html");
-    cs = new BrowserWindow({
+    global.win.loadURL("file://" + __dirname + "/index.html");
+    global.cs = new BrowserWindow({
         title: "Cheat Sheet",
         icon: "favicon.png",
         frame: false,
@@ -29,28 +29,28 @@ function openwin(){
         maxWidth: 388,
         show: false
     });
-    cs.webContents.on('new-window', function(e, url) {
+    global.cs.webContents.on('new-window', function(e, url) {
         e.preventDefault();
         require('electron').shell.openExternal(url);
     });
-    cs.loadURL("file://" + __dirname + "/cheatsheet.html");
+    global.cs.loadURL("file://" + __dirname + "/cheatsheet.html");
 };
 
 openedcheatsheet = false;
 global.cheatsheet = function(){
     if(!openedcheatsheet) {
-        let bounds = win.getBounds();
+        let bounds = global.win.getBounds();
         let workarea = screen.getDisplayNearestPoint(bounds).workArea;
-        cs.setBounds({
+        global.cs.setBounds({
             height: bounds.height,
             y: bounds.y,
             x: Math.min(bounds.x + bounds.width, workarea.x + workarea.width - 388)
         });
         openedcheatsheet = true;
     }
-    cs.show();
+    global.cs.show();
 }
 global.closee = function(){
-    win.close();
-    cs.close();
+    global.win.close();
+    global.cs.close();
 }

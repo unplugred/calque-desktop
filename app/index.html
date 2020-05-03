@@ -97,7 +97,6 @@ last + 1
     <script src="theme.js"></script>
     <script>
         const remote = require('electron').remote;
-        const contextMenu = require('electron-context-menu');
         const template = [
                 { role: 'copy' },
                 { role: 'cut' },
@@ -115,67 +114,94 @@ last + 1
                 },
                 {
                     label: 'Theme',
+                    id: "thememenu",
                     'submenu': [
                         {
                             label: 'Dark',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Dark");
+                                changetheme(0);
                             }
                         },
                         {
                             label: 'Light',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Light");
+                                changetheme(1);
                             }
                         },
                         {
                             label: 'Contrast',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Contrast");
+                                changetheme(2);
                             }
                         },
                         {
                             label: 'Pink',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Pink");
+                                changetheme(3);
                             }
                         },
                         {
                             label: 'Desert',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Desert");
+                                changetheme(4);
                             }
                         },
                         {
                             label: 'Rose',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Rose");
+                                changetheme(5);
                             }
                         },
                         {
                             label: 'Hotdog Stand',
+                            type: 'radio',
                             click: (menuItem, BrowserWindow, event) => {
-                                changetheme("Hotdog Stand");
+                                changetheme(6);
                             }
                         }
                     ]
                 },
+                {
+                    label: 'Always on top',
+                    type: 'checkbox',
+                    checked: localStorage.getItem("isOnTop") === "true",
+                    click: (menuItem, BrowserWindow, event) => {
+                        remote.getGlobal("win").setAlwaysOnTop(menuItem.checked);
+                        remote.getGlobal("cs").setAlwaysOnTop(menuItem.checked);
+                        localStorage.setItem("isOnTop", menuItem.checked);
+                    }
+                },
+                //{ role: 'toggleDevTools' },
                 { role: 'quit' }
         ];
         const menuu = remote.Menu.buildFromTemplate(template);
-        contextMenu({ menu: actions => template });
+        window.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            menuu.popup({ window:remote.getCurrentWindow() })
+        }, false);
 
         document.getElementById("min").addEventListener("click", function (e) { remote.getCurrentWindow().minimize(); });
         document.getElementById("close").addEventListener("click", function (e) { remote.getGlobal("closee")(); });
         document.getElementById("settings").addEventListener("click", function (e) { menuu.popup(); });
 
-        loadtheme();
+        menuu.getMenuItemById("thememenu").submenu.items[loadtheme()].checked = true;
 
         var input = document.getElementById('input');
         if (localStorage.getItem("input"))
             input.value = localStorage.getItem("input");
 
         window.onload = function () {
+            if(localStorage.getItem("isOnTop") === "true") {
+                remote.getGlobal("win").setAlwaysOnTop(true);
+                remote.getGlobal("cs").setAlwaysOnTop(true);
+            }
+
             window.calque = new Calque(input, document.getElementById('output'));
             input.focus();
             setTimeout(function(){

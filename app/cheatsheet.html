@@ -73,6 +73,10 @@
     </div>
     <script src="theme.js"></script>
     <script>
+        window.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        }, false);
+
         const remote = require('electron').remote;
         document.getElementById("min").addEventListener("click", function (e) {
             remote.getCurrentWindow().minimize();
