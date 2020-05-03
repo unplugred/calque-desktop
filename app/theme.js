@@ -1,18 +1,20 @@
+var themes = ["Dark","Light","Contrast","Pink","Desert","Rose","Hotdog Stand"];
+
 function changetheme(thm){
-    document.getElementById('thm').href = "themes/" + thm + ".css";
+    document.getElementById('thm').href = "themes/" + themes[thm] + ".css";
     localStorage.setItem("theme", thm);
 }
 
 function loadtheme() {
-    if (localStorage.getItem("theme"))
-        changetheme(localStorage.getItem("theme"));
-    else
-        changetheme("Dark");
+    let num = parseInt(localStorage.getItem("theme"));
+    if(isNaN(num)) num = 0;
+    changetheme(num);
+    return num;
 }
 
 var thme;
 function updatetheme() {
     if(thme === localStorage.getItem("theme")) return;
     thme = localStorage.getItem("theme");
-    document.getElementById('thm').href = "themes/" + thme + ".css";
+    document.getElementById('thm').href = "themes/" + themes[thme] + ".css";
 }
