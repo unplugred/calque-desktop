@@ -19,7 +19,7 @@ function openwin(){
     global.win.loadURL("file://" + __dirname + "/index.html");
     global.cs = new BrowserWindow({
         title: "Cheat Sheet",
-        icon: "favicon.png",
+        icon: "icons/icon64.png",
         frame: false,
         transparent: true,
         darkTheme: true,
