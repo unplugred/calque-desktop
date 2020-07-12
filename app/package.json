@@ -1,9 +1,7 @@
 {
     "name": "Calque",
     "version": "1.2.0",
-    "dependencies": {
-        "simplebar": "^5.1.0"
-    },
+    "dependencies": {},
     "devDependencies": {
         "electron": "^8.2.5",
         "electron-builder": "^22.6.0"
