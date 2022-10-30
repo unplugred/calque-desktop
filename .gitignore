@@ -7,4 +7,4 @@ node_modules
 .dir
 dist
 *.log
-app/package-lock.json
+package-lock.json
