@@ -14,7 +14,11 @@ function openwin(){
         frame: false,
         transparent: true,
         darkTheme: true,
-        webPreferences: { nodeIntegration: true }
+        webPreferences: {
+			nodeIntegration: true,
+			enableRemoteModule: true,
+			contextIsolation: false
+		}
     });
     global.win.loadURL("file://" + __dirname + "/index.html");
     global.cs = new BrowserWindow({
@@ -23,7 +27,11 @@ function openwin(){
         frame: false,
         transparent: true,
         darkTheme: true,
-        webPreferences: { nodeIntegration: true },
+        webPreferences: {
+			nodeIntegration: true,
+			enableRemoteModule: true,
+			contextIsolation: false
+		},
         width: 388,
         minWidth: 388,
         maxWidth: 388,
