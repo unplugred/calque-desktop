@@ -20,7 +20,7 @@
             else last = Date.now();
 
             calque.input();
-            calque.parentEl.style.height = calque.outputEl.clientHeight + 'px';
+            calque.inputEl.style.height = Math.max(calque.outputEl.clientHeight, calque.parentEl.clientHeight) + 'px';
         };
 
         handler();
