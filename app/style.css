@@ -1,181 +1,185 @@
 ::selection {
-    color: var(--background);
-    background: var(--foreground);
+	color: var(--background);
+	background: var(--foreground);
 }
-.simplebar-scrollbar:before {
-    background-color: var(--foreground);
-    border-radius: 6px;
-    left: 2px;
-    right: 4px;
+
+*::-webkit-scrollbar {
+	width: 13px;
 }
-.simplebar-scrollbar.simplebar-visible:before {
-    opacity: 1;
+
+*::-webkit-scrollbar-track {
+	background-color: transparent;
 }
-.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
-    top: 5px;
-    bottom: 5px;
+
+*::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	border: 4px solid var(--background);
+	border-radius: 7px;
+	transition: background-color .3s;
 }
-#scrollwrap {
-    height: 100%;
+
+body:hover *::-webkit-scrollbar-thumb {
+	background-color: var(--foreground);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    color: var(--foreground);
-    overflow: hidden;
+	margin: 0;
+	padding: 0;
+	color: var(--foreground);
+	overflow: hidden;
 }
 
 .top {
-    -webkit-app-region: drag;
-    width: calc(100vw - 65px);
-    height: 20px;
-    position: fixed;
+	-webkit-app-region: drag;
+	width: calc(100vw - 65px);
+	height: 20px;
+	position: fixed;
 }
 
 .interface {
-    border-radius: 10px;
-    background-color: var(--background);
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: absolute;
+	border-radius: 10px;
+	background-color: var(--background);
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
 }
 
 .input, .output {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    border: none;
-    margin: 0;
-    font-family: 'Oxygen Mono', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	margin: 0;
+	font-family: 'Oxygen Mono', monospace;
+	font-size: 16px;
+	line-height: 1.5;
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	word-break: break-word;
+	overflow: hidden;
 }
 
 .input {
-    outline: none;
-    background: none;
-    resize: none;
-    padding: 20px;
-    height: inherit;
-    color: var(--foreground);
+	outline: none;
+	background: none;
+	resize: none;
+	padding: 20px;
+	height: inherit;
+	color: var(--foreground);
 }
 
 .output {
-    padding: 20px 0;
-    min-height: 100vh;
+	padding: 20px 0;
+	min-height: 100%;
 }
 
 .output div {
-    display: block;
-    padding: 0 20px;
+	display: block;
+	padding: 0 20px;
 }
 
 .output div.highlight {
-    background-color: var(--highlight);
+	background-color: var(--highlight);
 }
 
 .output .code {
-    color: var(--markup);
+	color: var(--markup);
 }
 
 .output .code:before {
-    content: attr(data-code);
+	content: attr(data-code);
 }
 
 .output .hint:before {
-    content: attr(data-prefix);
-    color: var(--markup);
-    white-space: pre;
+	content: attr(data-prefix);
+	color: var(--markup);
+	white-space: pre;
 }
 
 .output .hint {
-    z-index: 1;
-    position: absolute;
-    white-space: pre;
+	z-index: 1;
+	position: absolute;
+	white-space: pre;
 }
 
 .output .help {
-    color: var(--results);
+	color: var(--results);
 }
 
 .output .result {
-    color: var(--results);
+	color: var(--results);
 }
 
 .output .error {
-    color: var(--error);
+	color: var(--error);
 }
 
 .icon {
-    opacity: 0;
-    color: var(--foreground);
-    position: fixed;
-    transition: opacity .3s;
+	opacity: 0;
+	color: var(--foreground);
+	position: fixed;
+	transition: opacity .3s;
 }
 body:hover .icon, .top:hover .icon {
-    opacity: 1!important;
+	opacity: 1!important;
 }
 
 #close {
-    width: 20px;
-    height: 14px;
-    padding-top: 11px;
-    padding-left: 5px;
-    right: 10px;
-    top: 10px;
+	width: 20px;
+	height: 14px;
+	padding-top: 11px;
+	padding-left: 5px;
+	right: 10px;
+	top: 10px;
 }
 #close:before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background-color: currentColor;
-    transform: rotate(45deg);
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 2px;
+	background-color: currentColor;
+	transform: rotate(45deg);
 }
 #close:after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background-color: currentColor;
-    transform: rotate(-45deg);
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 2px;
+	background-color: currentColor;
+	transform: rotate(-45deg);
 }
 #min {
-    right: 40px;
-    top: 10px;
-    width: 19px;
-    height: 14px;
-    padding-top: 11px;
-    padding-left: 6px;
+	right: 40px;
+	top: 10px;
+	width: 19px;
+	height: 14px;
+	padding-top: 11px;
+	padding-left: 6px;
 }
 #min:after {
-    content: '';
-    position: absolute;
-    width: 13px;
-    height: 2px;
-    background-color: currentColor;
+	content: '';
+	position: absolute;
+	width: 13px;
+	height: 2px;
+	background-color: currentColor;
 }
 #settings {
-    padding-top: 4px;
-    padding-left: 5px;
-    top: 40px;
-    right: 10px;
-    width: 20px;
-    height: 21px;
+	padding-top: 4px;
+	padding-left: 5px;
+	top: 40px;
+	right: 10px;
+	width: 20px;
+	height: 21px;
 }
 #settings:after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border: solid 2px currentColor;
-    border-radius: 100%;
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border: solid 2px currentColor;
+	border-radius: 100%;
 }

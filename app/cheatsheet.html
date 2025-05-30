@@ -1,104 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cheat Sheet</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Cheat Sheet</title>
 
-    <link rel="icon" type="image/png" href="/icons/icon16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/icons/icon24.png" sizes="24x24">
-    <link rel="icon" type="image/png" href="/icons/icon48.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="/icons/icon64.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="/icons/icon192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/icons/icon256.png" sizes="256x256">
-    <link rel="icon" type="image/png" href="/icons/icon32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/icons/icon16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/icons/icon24.png" sizes="24x24">
+	<link rel="icon" type="image/png" href="/icons/icon48.png" sizes="48x48">
+	<link rel="icon" type="image/png" href="/icons/icon64.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="/icons/icon192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/icons/icon256.png" sizes="256x256">
+	<link rel="icon" type="image/png" href="/icons/icon32.png" sizes="32x32">
 
-    <link rel="stylesheet" href="simplebar/simplebar.min.css">
-    <link rel="stylesheet" id="thm" href="">
-    <link rel="stylesheet" href="cheatsheet.css">
-    <style>
-        /* latin-ext */
-        @font-face {
-            font-family: 'Oxygen Mono';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen-ext.woff2") format('woff2');
-            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-        /* latin */
-        @font-face {
-            font-family: 'Oxygen Mono';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen.woff2") format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-    </style>
-    <style id="transition"></style>
+	<link rel="stylesheet" id="thm" href="">
+	<link rel="stylesheet" href="cheatsheet.css">
+	<style>
+		/* latin-ext */
+		@font-face {
+			font-family: 'Oxygen Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen-ext.woff2") format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+			font-family: 'Oxygen Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen.woff2") format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+	<style id="transition"></style>
 </head>
 <body>
-    <div id="scroll" data-simplebar data-simplebar-auto-hide="false">
-        <div class="interface">
-            <h1>Cheat Sheet</h1>
+	<div class="top">
+		<div id="close" class="icon"></div>
+		<div id="min" class="icon"></div>
+	</div>
+	<div class="interface">
+		<h1>Cheat Sheet</h1>
 
-            <hr>
+		<hr>
 
-            <h2>Expressions</h2>
-            <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
-            <pre data-result=" = 2i">sqrt(-4)</pre>
-            <pre data-result=" = 5.08 cm">2 inch to cm</pre>
-            <pre data-result=" = 0.70711">cos(45 deg)</pre>
+		<h2>Expressions</h2>
+		<pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
+		<pre data-result=" = 2i">sqrt(-4)</pre>
+		<pre data-result=" = 5.08 cm">2 inch to cm</pre>
+		<pre data-result=" = 0.70711">cos(45 deg)</pre>
 
-            <h2>Variables</h2>
-            <pre data-result=" = 6">a = 2 + 2 * 2</pre>
-            <pre data-result=" = 5">b = a - 1</pre>
-            <pre data-result=" = 30">a * b</pre>
+		<h2>Variables</h2>
+		<pre data-result=" = 6">a = 2 + 2 * 2</pre>
+		<pre data-result=" = 5">b = a - 1</pre>
+		<pre data-result=" = 30">a * b</pre>
 
-            <h2>Functions</h2>
-            <pre data-result=" fn">pow2(x) = x ^ 2</pre>
-            <pre data-result=" = 36">pow2(6)</pre>
+		<h2>Functions</h2>
+		<pre data-result=" fn">pow2(x) = x ^ 2</pre>
+		<pre data-result=" = 36">pow2(6)</pre>
 
-            <h2>Comments</h2>
-            <pre># This is a comment</pre>
-            <pre data-result=" = 4">a = 2 * 2 # And this</pre>
+		<h2>Comments</h2>
+		<pre># This is a comment</pre>
+		<pre data-result=" = 4">a = 2 * 2 # And this</pre>
 
-            <h2>Last result</h2>
-            <pre data-result=" = 4">2 * 2</pre>
-            <pre data-result=" = 5">last + 1</pre>
+		<h2>Last result</h2>
+		<pre data-result=" = 4">2 * 2</pre>
+		<pre data-result=" = 5">last + 1</pre>
 
-            <hr>
+		<hr>
 
-            <p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
-            <p>View on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a><br/><small>(fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
-            <p>This Cheat Sheet was written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
-        </div>
-    </div>
-    <div class="top">
-        <div id="close" class="icon"></div>
-        <div id="min" class="icon"></div>
-    </div>
-    <script src="theme.js"></script>
-    <script>
-        window.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-        }, false);
+		<p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
+		<p>View on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a><br/><small>(fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
+		<p>This Cheat Sheet was written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
+	</div>
+	<script>const remote = require('@electron/remote');</script>
+	<script src="theme.js"></script>
+	<script>
+		window.addEventListener('contextmenu', (e) => {
+			e.preventDefault();
+		}, false);
 
-        const remote = require('electron').remote;
-        document.getElementById("min").addEventListener("click", function (e) {
-            remote.getCurrentWindow().minimize();
-        });
-        document.getElementById("close").addEventListener("click", function (e) {
-            remote.getCurrentWindow().hide();
-        });
+		document.getElementById("min").addEventListener("click", function (e) {
+			remote.getCurrentWindow().minimize();
+		});
+		document.getElementById("close").addEventListener("click", function (e) {
+			remote.getCurrentWindow().hide();
+		});
 
-        setInterval(updatetheme, 1000);
-        updatetheme();
-        setTimeout(function(){
-            document.getElementById("transition").innerText = '*{transition:background-color .3s;}';
-        }, 1000);
-    </script>
-    <script defer src="simplebar/simplebar.min.js"></script>
+		setInterval(updatetheme, 1000);
+		updatetheme();
+		setTimeout(function(){
+			document.getElementById("transition").innerText = '* { transition: background-color .3s; }';
+		}, 1000);
+	</script>
 </body>
 </html>

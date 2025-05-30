@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Calque</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Calque</title>
 
-    <link rel="icon" type="image/png" href="/icons/icon16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/icons/icon24.png" sizes="24x24">
-    <link rel="icon" type="image/png" href="/icons/icon48.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="/icons/icon64.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="/icons/icon192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/icons/icon256.png" sizes="256x256">
-    <link rel="icon" type="image/png" href="/icons/icon32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/icons/icon16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/icons/icon24.png" sizes="24x24">
+	<link rel="icon" type="image/png" href="/icons/icon48.png" sizes="48x48">
+	<link rel="icon" type="image/png" href="/icons/icon64.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="/icons/icon192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/icons/icon256.png" sizes="256x256">
+	<link rel="icon" type="image/png" href="/icons/icon32.png" sizes="32x32">
 
-    <link rel="stylesheet" href="simplebar/simplebar.min.css">
-    <link rel="stylesheet" id="thm" href="">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* latin-ext */
-        @font-face {
-            font-family: 'Oxygen Mono';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen-ext.woff2") format('woff2');
-            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-        /* latin */
-        @font-face {
-            font-family: 'Oxygen Mono';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen.woff2") format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-    </style>
-    <style id="transition"></style>
+	<link rel="stylesheet" id="thm" href="">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* latin-ext */
+		@font-face {
+			font-family: 'Oxygen Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen-ext.woff2") format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+			font-family: 'Oxygen Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("./oxygen.woff2") format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+	<style id="transition"></style>
 </head>
 <body>
-    <div class="interface">
-        <div id="scrollwrap" data-simplebar data-simplebar-auto-hide="false">
-            <div id="wrap">
-                <div class="output" id="output"></div>
-                <textarea class="input" id="input"># Calque - reactive calculator
+	<div class="interface">
+		<div class="output" id="output"></div>
+		<textarea class="input" id="input"># Calque - reactive calculator
 # (cheat sheet is available via right click menu)
 
 # Expressions
@@ -93,132 +90,92 @@ last + 1
 
 # Using Math.js:
 # https://github.com/grimalschi/mathjs</textarea>
-            </div>
-        </div>
-    </div>
-    <div class="top">
-        <div id="close" class="icon"></div>
-        <div id="min" class="icon"></div>
-        <div id="settings" class="icon"></div>
-    </div>
+	</div>
+	<div class="top">
+		<div id="close" class="icon"></div>
+		<div id="min" class="icon"></div>
+		<div id="settings" class="icon"></div>
+	</div>
 
-    <script src="theme.js"></script>
-    <script>
-        const remote = require('electron').remote;
-        const template = [
-                { role: 'copy' },
-                { role: 'cut' },
-                { role: 'paste' },
-                { type: 'separator' },
-                { role: 'zoomIn' },
-                { role: 'zoomOut' },
-                { role: 'resetZoom', label: 'Reset Zoom' },
-                { type: 'separator' },
-                {
-                    label: 'Cheat Sheet',
-                    click: (menuItem, BrowserWindow, event) => {
-                        remote.getGlobal("cheatsheet")();
-                    }
-                },
-                {
-                    label: 'Theme',
-                    id: "thememenu",
-                    'submenu': [
-                        {
-                            label: 'Dark',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(0);
-                            }
-                        },
-                        {
-                            label: 'Light',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(1);
-                            }
-                        },
-                        {
-                            label: 'Contrast',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(2);
-                            }
-                        },
-                        {
-                            label: 'Pink',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(3);
-                            }
-                        },
-                        {
-                            label: 'Desert',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(4);
-                            }
-                        },
-                        {
-                            label: 'Rose',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(5);
-                            }
-                        },
-                        {
-                            label: 'Hotdog Stand',
-                            type: 'radio',
-                            click: (menuItem, BrowserWindow, event) => {
-                                changetheme(6);
-                            }
-                        }
-                    ]
-                },
-                {
-                    label: 'Always on top',
-                    type: 'checkbox',
-                    checked: localStorage.getItem("isOnTop") === "true",
-                    click: (menuItem, BrowserWindow, event) => {
-                        remote.getGlobal("win").setAlwaysOnTop(menuItem.checked);
-                        remote.getGlobal("cs").setAlwaysOnTop(menuItem.checked);
-                        localStorage.setItem("isOnTop", menuItem.checked);
-                    }
-                },
-                //{ role: 'toggleDevTools' },
-                { role: 'quit' }
-        ];
-        const menuu = remote.Menu.buildFromTemplate(template);
-        window.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            menuu.popup({ window:remote.getCurrentWindow() })
-        }, false);
+	<script>const remote = require('@electron/remote');</script>
+	<script src="theme.js"></script>
+	<script>
+		const template = [
+				{ role: 'copy' },
+				{ role: 'cut' },
+				{ role: 'paste' },
+				{ type: 'separator' },
+				{ role: 'zoomIn' },
+				{ role: 'zoomOut' },
+				{ role: 'resetZoom', label: 'Reset Zoom' },
+				{ type: 'separator' },
+				{
+					label: 'Cheat Sheet',
+					click: (menuItem, BrowserWindow, event) => {
+						remote.getGlobal("cheatsheet")();
+					}
+				},{
+					label: 'Theme',
+					id: "thememenu",
+					'submenu': [
+						{ label: themes[0], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(0); } },
+						{ label: themes[1], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(1); } },
+						{ label: themes[2], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(2); } },
+						{ label: themes[3], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(3); } },
+						{ label: themes[4], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(4); } },
+						{ label: themes[5], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(5); } },
+						{ label: themes[6], type: 'radio', click: (menuItem, BrowserWindow, event) => { changetheme(6); } }
+					]
+				},{
+					label: 'Always on top',
+					type: 'checkbox',
+					checked: remote.getGlobal("data").isontop == true,
+					click: (menuItem, BrowserWindow, event) => {
+						remote.getGlobal("win").setAlwaysOnTop(menuItem.checked);
+						remote.getGlobal("cs").setAlwaysOnTop(menuItem.checked);
+						remote.getGlobal("data").isontop = menuItem.checked;
+						remote.getGlobal("savedata")();
+					}
+				},
+				{ role: 'toggleDevTools' },
+				{ role: 'quit' }
+		];
+		const menuu = remote.Menu.buildFromTemplate(template);
+		menuu.getMenuItemById("thememenu").submenu.items[themenum].checked = true;
 
-        document.getElementById("min").addEventListener("click", function (e) { remote.getCurrentWindow().minimize(); });
-        document.getElementById("close").addEventListener("click", function (e) { remote.getGlobal("closee")(); });
-        document.getElementById("settings").addEventListener("click", function (e) { menuu.popup(); });
+		window.addEventListener('contextmenu', (e) => {
+			e.preventDefault();
+			menuu.popup({ window:remote.getCurrentWindow() })
+		}, false);
 
-        menuu.getMenuItemById("thememenu").submenu.items[loadtheme()].checked = true;
+		document.getElementById("min").addEventListener("click", function(e) { remote.getCurrentWindow().minimize(); });
+		document.getElementById("close").addEventListener("click", function(e) { remote.app.quit(); });
+		document.getElementById("settings").addEventListener("click", function(e) { menuu.popup(); });
 
-        var input = document.getElementById('input');
-        if (localStorage.getItem("input"))
-            input.value = localStorage.getItem("input");
+		var input = document.getElementById('input');
+		if(remote.getGlobal("data").input != null)
+			input.value = remote.getGlobal("data").input;
 
-        window.onload = function () {
-            if(localStorage.getItem("isOnTop") === "true") {
-                remote.getGlobal("win").setAlwaysOnTop(true);
-                remote.getGlobal("cs").setAlwaysOnTop(true);
-            }
+		window.onload = function() {
+			if(remote.getGlobal("data").isontop == "true") {
+				remote.getGlobal("win").setAlwaysOnTop(true);
+				remote.getGlobal("cs").setAlwaysOnTop(true);
+			}
 
-            window.calque = new Calque(input, document.getElementById('output'));
-            input.focus();
-            setTimeout(function(){
-                document.getElementById("transition").innerText = '*{transition:background-color .3s;}';
-            }, 1000);
-        }
-    </script>
-    <script defer src="simplebar/simplebar.min.js"></script>
-    <script defer src="math.min.js"></script>
-    <script defer src="calque.js"></script>
+			window.calque = new Calque(input, document.getElementById('output'));
+			input.focus();
+			setTimeout(function(){
+				document.getElementById("transition").innerText = '* { transition: background-color .3s; }';
+			}, 1000);
+		}
+
+		window.onbeforeunload = function() {
+			remote.getGlobal("data").input = input.value;
+			remote.getGlobal("savedata")();
+			remote.app.quit();
+		}
+	</script>
+	<script defer src="math.min.js"></script>
+	<script defer src="calque.js"></script>
 </body>
 </html>
