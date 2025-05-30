@@ -1,36 +1,20 @@
 {
 	"name": "Calque",
-	"version": "1.2.0",
+	"productName": "Calque",
+	"author": "unplugred",
+	"version": "1.5.0",
 	"devDependencies": {
-		"electron": "^36.3.2",
-		"electron-builder": "^26.0.12"
+		"@electron/packager": "github:electron/packager",
+		"electron": "^36.3.2"
+	},
+	"dependencies": {
+		"@electron/remote": "^2.1.2"
 	},
 	"main": "run.js",
 	"scripts": {
 		"start": "electron .",
-		"build": "electron-builder -mwl"
-	},
-	"build": {
-		"appId": "com.unplugred.calque",
-		"directories": {
-			"buildResources": "../dist"
-		},
-		"linux": {
-			"category": "Utility",
-			"target": "AppImage",
-			"icon": "build/favicon.png"
-		},
-		"win": {
-			"target": "zip",
-			"icon": "build/favicon.ico"
-		},
-		"mac": {
-			"category": "public.app-category.productivity",
-			"target": "dmg",
-			"icon": "build/favicon.icns"
-		}
-	},
-	"dependencies": {
-		"@electron/remote": "^2.1.2"
+		"build-linux": "electron-packager . Calque --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/icon512.png --prune=true --out=dist",
+		"build-win": "electron-packager . Calque --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/favicon.ico --prune=true --out=dist --version-string.CompanyName=unplugred --version-string.FileDescription=unplugred --version-string.ProductName=Calque",
+		"build-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/icon512.png --prune=true --out=dist"
 	}
 }
