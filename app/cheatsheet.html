@@ -15,6 +15,7 @@
 
 	<link rel="stylesheet" id="thm" href="">
 	<link rel="stylesheet" href="cheatsheet.css">
+	<link rel="stylesheet" id="usertheme" href="">
 	<style>
 		/* latin-ext */
 		@font-face {
@@ -79,6 +80,8 @@
 	<script>const remote = require('@electron/remote');</script>
 	<script src="theme.js"></script>
 	<script>
+		document.getElementById('usertheme').href = remote.getGlobal("themepath");
+
 		window.addEventListener('contextmenu', (e) => {
 			e.preventDefault();
 		}, false);
