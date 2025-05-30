@@ -3,7 +3,10 @@ require('@electron/remote/main').initialize();
 var path = require('path');
 var fs = require('fs');
 
-datapath = path.join(app.getPath('userData'),'calque.json');
+datapath = path.join(app.getPath('userData'),'calque');
+if(!fs.existsSync(datapath)) fs.mkdirSync(datapath);
+global.themepath = path.join(datapath,'theme.css');
+datapath = path.join(datapath,'calque.json');
 try {
 	global.data = JSON.parse(fs.readFileSync(datapath));
 } catch(error) {

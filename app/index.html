@@ -15,6 +15,7 @@
 
 	<link rel="stylesheet" id="thm" href="">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" id="usertheme" href="">
 	<style>
 		/* latin-ext */
 		@font-face {
@@ -100,6 +101,7 @@ last + 1
 	<script>const remote = require('@electron/remote');</script>
 	<script src="theme.js"></script>
 	<script>
+		document.getElementById('usertheme').href = remote.getGlobal("themepath");
 		const template = [
 				{ role: 'copy' },
 				{ role: 'cut' },
