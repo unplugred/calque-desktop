@@ -1,33 +1,36 @@
 {
-    "name": "Calque",
-    "version": "1.2.0",
-    "devDependencies": {
-        "electron": "^8.5.5",
-        "electron-builder": "^22.6.0"
-    },
-    "main": "run.js",
-    "scripts": {
-        "start": "electron .",
-        "build": "electron-builder -mwl"
-    },
-    "build": {
-        "appId": "com.unplugred.calque",
-        "directories": {
-            "buildResources": "../dist"
-        },
-        "linux": {
-            "category": "Utility",
-            "target": "AppImage",
-            "icon": "build/favicon.png"
-        },
-        "win": {
-            "target": "zip",
-            "icon": "build/favicon.ico"
-        },
-        "mac": {
-            "category": "public.app-category.productivity",
-            "target": "dmg",
-            "icon": "build/favicon.icns"
-        }
-    }
+	"name": "Calque",
+	"version": "1.2.0",
+	"devDependencies": {
+		"electron": "^36.3.2",
+		"electron-builder": "^26.0.12"
+	},
+	"main": "run.js",
+	"scripts": {
+		"start": "electron .",
+		"build": "electron-builder -mwl"
+	},
+	"build": {
+		"appId": "com.unplugred.calque",
+		"directories": {
+			"buildResources": "../dist"
+		},
+		"linux": {
+			"category": "Utility",
+			"target": "AppImage",
+			"icon": "build/favicon.png"
+		},
+		"win": {
+			"target": "zip",
+			"icon": "build/favicon.ico"
+		},
+		"mac": {
+			"category": "public.app-category.productivity",
+			"target": "dmg",
+			"icon": "build/favicon.icns"
+		}
+	},
+	"dependencies": {
+		"@electron/remote": "^2.1.2"
+	}
 }

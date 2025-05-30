@@ -1,20 +1,18 @@
 var themes = ["Dark","Light","Contrast","Pink","Desert","Rose","Hotdog Stand"];
 
-function changetheme(thm){
-    document.getElementById('thm').href = "themes/" + themes[thm] + ".css";
-    localStorage.setItem("theme", thm);
+var themenum = remote.getGlobal("data").theme;
+document.getElementById('thm').href = "themes/" + themes[themenum] + ".css";
+
+function changetheme(theme){
+	themenum = theme;
+	document.getElementById('thm').href = "themes/" + themes[themenum] + ".css";
+	remote.getGlobal("data").theme = themenum;
+	remote.getGlobal("savedata")();
 }
 
-function loadtheme() {
-    let num = parseInt(localStorage.getItem("theme"));
-    if(isNaN(num)) num = 0;
-    changetheme(num);
-    return num;
-}
-
-var thme;
 function updatetheme() {
-    if(thme === localStorage.getItem("theme")) return;
-    thme = localStorage.getItem("theme");
-    document.getElementById('thm').href = "themes/" + themes[thme] + ".css";
+	let currenttheme = remote.getGlobal("data").theme;
+	if(themenum == currenttheme) return;
+	themenum = currenttheme;
+	document.getElementById('thm').href = "themes/" + themes[themenum] + ".css";
 }
