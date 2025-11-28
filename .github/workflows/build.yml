@@ -1,0 +1,53 @@
+name: build
+
+env:
+  PLUG: build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: build
+    strategy:
+      matrix:
+        include:
+        - {
+            name: "Windows",
+            id: "win",
+            folder: "win32-ia32",
+            os: windows-latest,
+          }
+        - {
+            name: "Linux",
+            id: "linux",
+            folder: "linux-x64",
+            os: ubuntu-22.04,
+          }
+    runs-on: ${{ matrix.os }}
+    concurrency: build_${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: prepare
+      id: prepare
+      run: |
+        cd app
+        npm install
+
+    - name: build
+      id: build-vst3
+      run: |
+        npm run build-${{ matrix.id }}
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{ env.PLUG }} ${{ matrix.name }}
+        path: dist/Calque-${{ matrix.folder }}
+        compression-level: 9
