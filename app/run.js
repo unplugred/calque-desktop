@@ -3,7 +3,7 @@ require('@electron/remote/main').initialize();
 var path = require('path');
 var fs = require('fs');
 
-datapath = path.join(app.getPath('userData'),'calque');
+datapath = app.getPath('userData');
 if(!fs.existsSync(datapath)) fs.mkdirSync(datapath);
 global.themepath = path.join(datapath,'theme.css');
 datapath = path.join(datapath,'calque.json');
@@ -33,9 +33,12 @@ function openwin(){
 	global.win = new BrowserWindow({
 		title: "Calque",
 		icon: "icons/icon64.png",
-		frame: false,
 		transparent: true,
+		frame: false,
+		roundedCorners: false,
+		resizable: true,
 		darkTheme: true,
+		thickFrame: true,
 		webPreferences: {
 			nodeIntegration: true,
 			enableRemoteModule: true,
@@ -55,9 +58,12 @@ function openwin(){
 	global.cs = new BrowserWindow({
 		title: "Cheat Sheet",
 		icon: "icons/icon64.png",
-		frame: false,
 		transparent: true,
+		frame: false,
+		roundedCorners: false,
+		resizable: true,
 		darkTheme: true,
+		thickFrame: true,
 		webPreferences: {
 			nodeIntegration: true,
 			enableRemoteModule: true,
