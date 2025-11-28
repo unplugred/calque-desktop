@@ -1,8 +1,5 @@
 name: build
 
-env:
-  PLUG: build
-
 on:
   push:
     branches:
@@ -17,6 +14,12 @@ jobs:
     strategy:
       matrix:
         include:
+        - {
+            name: "Mac",
+            id: "mac",
+            folder: "mac",
+            os: macos-13,
+          }
         - {
             name: "Windows",
             id: "win",
@@ -35,20 +38,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: prepare
-      id: prepare
+    - name: build
+      id: build
       run: |
         cd app
         npm install
-
-    - name: build
-      id: build-vst3
-      run: |
-        cd app
         npm run build-${{ matrix.id }}
+        cd dist
+        ls
 
     - uses: actions/upload-artifact@v4
       with:
-        name: ${{ env.PLUG }} ${{ matrix.name }}
+        name: Calque ${{ matrix.name }}
         path: app/dist/Calque-${{ matrix.folder }}
         compression-level: 9
