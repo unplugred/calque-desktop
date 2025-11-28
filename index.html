@@ -137,9 +137,11 @@ last + 1
 
 # Using Math.js:
 # https://github.com/grimalschi/mathjs</textarea>
+		<canvas id="canvas"></canvas>
 	</div>
 
 	<script>
+		let linecolor = "white";
 		window.onload = function () {
 			var input = document.getElementById('input');
 			if (localStorage.getItem("input"))
@@ -147,9 +149,11 @@ last + 1
 
 			window.calque = new Calque(input, document.getElementById('output'));
 			input.focus();
+			linecolor = getComputedStyle(document.body).getPropertyValue('--foreground');
 		}
 	</script>
-	<script defer src="app/math.min.js"></script>
+	<script defer src="app/math.js"></script>
+	<script defer src="app/mathext.js"></script>
 	<script defer src="app/calque.js"></script>
 </body>
 </html>

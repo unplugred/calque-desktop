@@ -109,6 +109,7 @@
 
         calque.lines = [];
 
+        plot = [];
         var scope = {
             last: null
         };
@@ -181,6 +182,8 @@
                 scope.last = line.result;
             }
         });
+
+        drawplot();
     };
 
     Calque.prototype.readActiveLine = function () {
@@ -368,6 +371,16 @@
             if (type === 'result') {
                 if (typeof line.result === 'number') {
                     data = math.round(line.result, 10).toString();
+                } else if (Array.isArray(line.result)) {
+                    if(line.result.length >= 10)
+                        data = "["+math.round(line.result[0], 10).toString()+" ... "+math.round(line.result[line.result.length-1], 10).toString()+"]";
+                    else
+                        data = "["+line.result.toString().replace(',',', ')+"]";
+                } else if (typeof line.result === 'object' && line.result._data.length !== undefined) {
+                    if(line.result._data.length >= 10)
+                        data = "["+math.round(line.result._data[0], 10).toString()+" ... "+math.round(line.result._data[line.result._data.length-1], 10).toString()+"]";
+                    else
+                        data = line.result.toString();
                 } else {
                     data = line.result.toString();
                 }

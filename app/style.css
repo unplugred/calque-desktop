@@ -36,6 +36,11 @@ body {
 	position: fixed;
 }
 
+canvas {
+	position: fixed;
+	pointer-events: none;
+}
+
 .interface {
 	border-radius: 10px;
 	background-color: var(--background);
