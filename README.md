@@ -55,6 +55,12 @@ last + 1
 
 ## Themes
 
+CSS overrides can be done by creating a file at:
+
+- ~/config/Calque/theme.css on Linux
+
+- %appdata%/Calque/theme.css on Windows
+
 Themes can be changed via the right click menu.
 
 <p align="center"><img src="resources/themes.png"></p>
@@ -72,6 +78,12 @@ Change indent: Tab/Shift+Tab
 Zoom in: Ctrl+Shift+Plus
 
 Zoom out: Ctrl+Minus
+
+## To do
+
+- Mac codesigning
+
+- Installers
 
 ## Technologies
 
