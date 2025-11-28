@@ -44,10 +44,11 @@ jobs:
     - name: build
       id: build-vst3
       run: |
+        cd app
         npm run build-${{ matrix.id }}
 
     - uses: actions/upload-artifact@v4
       with:
         name: ${{ env.PLUG }} ${{ matrix.name }}
-        path: dist/Calque-${{ matrix.folder }}
+        path: app/dist/Calque-${{ matrix.folder }}
         compression-level: 9
