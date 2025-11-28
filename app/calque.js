@@ -159,7 +159,7 @@
 
                     line.parsed = cached.parsed;
                     line.compiled = cached.compiled;
-                    line.result = line.compiled.eval(scope);
+                    line.result = line.compiled.evaluate(scope);
                 } catch (e) {
                     line.error = e.toString();
                 }
