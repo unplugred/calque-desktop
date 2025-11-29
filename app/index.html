@@ -160,7 +160,7 @@ last + 1
 			input.value = remote.getGlobal("data").input;
 
 		window.onload = function() {
-			if(remote.getGlobal("data").isontop == "true") {
+			if(remote.getGlobal("data").isontop == true) {
 				remote.getGlobal("win").setAlwaysOnTop(true);
 				remote.getGlobal("cs").setAlwaysOnTop(true);
 			}
