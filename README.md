@@ -81,6 +81,8 @@ Zoom out: Ctrl+Minus
 
 ## To do
 
+- File open / save / open as / save as
+
 - Mac codesigning
 
 - Installers

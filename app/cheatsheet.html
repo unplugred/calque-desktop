@@ -38,7 +38,7 @@
 	</style>
 	<style id="transition"></style>
 </head>
-<body>
+<body id="cheatsheet">
 	<div class="top">
 		<div id="close" class="icon"></div>
 		<div id="min" class="icon"></div>
@@ -49,33 +49,57 @@
 		<hr>
 
 		<h2>Expressions</h2>
-		<pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
-		<pre data-result=" = 2i">sqrt(-4)</pre>
-		<pre data-result=" = 5.08 cm">2 inch to cm</pre>
-		<pre data-result=" = 0.70711">cos(45 deg)</pre>
+		<div class="line"><div class="input">2 + 2 * 2</div> = <div class="output">6</div></div>
+		<div class="line"><div class="input">sqrt(3^2 + 4^2)</div> = <div class="output">5</div></div>
+		<div class="line"><div class="input">2 inch to cm</div> = <div class="output">5.08 cm</div></div>
+		<div class="line"><div class="input">cos(45 deg)</div> = <div class="output">0.70711</div></div>
+		<div class="line"><div class="input">time()</div></div>
 
 		<h2>Variables</h2>
-		<pre data-result=" = 6">a = 2 + 2 * 2</pre>
-		<pre data-result=" = 5">b = a - 1</pre>
-		<pre data-result=" = 30">a * b</pre>
+		<div class="line"><div class="input">a = 25</div></div>
+		<div class="line"><div class="input">b = a * 2</div> = <div class="output">50</div></div>
+		<div class="line"><div class="input">postal_code = 1122</div></div>
+
+		<h2>Summing lists</h2>
+		<div class="line"><div class="input">animals:</div> = <div class="output">5</div></div>
+		<div class="line">| <div class="input">cats = 2</div></div>
+		<div class="line">| <div class="input">dogs = 3</div></div>
+		<div class="line"><div class="input">plants:</div> = <div class="output">40</div></div>
+		<div class="line">| <div class="input">trees = 20</div></div>
+		<div class="line">| <div class="input">vegetables:</div> = <div class="output">20</div></div>
+		<div class="line">| | <div class="input">potatoes = 10</div></div>
+		<div class="line">| | <div class="input">carrots = 10</div></div>
 
 		<h2>Functions</h2>
-		<pre data-result=" fn">pow2(x) = x ^ 2</pre>
-		<pre data-result=" = 36">pow2(6)</pre>
+		<div class="line"><div class="input">pow2(x) = x ^ 2</div></div>
+		<div class="line"><div class="input">pow2(6)</div> = <div class="output">36</div></div>
 
 		<h2>Comments</h2>
-		<pre># This is a comment</pre>
-		<pre data-result=" = 4">a = 2 * 2 # And this</pre>
+		<div class="line"><div class="input"># This is a comment</div></div>
+		<div class="line"><div class="input">a = 2 * 2 # And this</div> = <div class="output">4</div></div>
 
 		<h2>Last result</h2>
-		<pre data-result=" = 4">2 * 2</pre>
-		<pre data-result=" = 5">last + 1</pre>
+		<div class="line"><div class="input">2 * 2</div> = <div class="output">4</div></div>
+		<div class="line"><div class="input">last + 1</div> = <div class="output">5</div></div>
+
+		<h2>Plotting</h2>
+		<div class="line"><div class="input">plot(sin(x * pi * 2) * 0.8)</div></div>
+		<div class="line"><div class="input">plot(pingpong(range(0, 3, 0.1)), 0, 1)</div></div>
+
+		<h2>Keys</h2>
+		<div class="line"><div class="input">Duplicate line or selection:</div> <div class="output">Ctrl+D</div></div>
+		<div class="line"><div class="input">Change selected number:</div> <div class="output">Up/Down</div></div>
+		<div class="line"><div class="input">Change selected number 10x:</div> <div class="output">Shift+Up/Down</div></div>
+		<div class="line"><div class="input">Change indent:</div> <div class="output">Tab/Shift+Tab</div></div>
+		<div class="line"><div class="input">Zoom in:</div> <div class="output">Ctrl+Shift+Plus</div></div>
+		<div class="line"><div class="input">Zoom out:</div> <div class="output">Ctrl+Minus</div></div>
 
 		<hr>
 
+		<p>Calque Desktop on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a></p>
+		<p>Fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
 		<p>Using <a target="_blank" href="https://github.com/josdejong/mathjs">math.js</a>.</p>
-		<p>View on <a target="_blank" href="https://github.com/unplugred/calque-desktop/">GitHub</a><br/><small>(fork of <a target="_blank" href="https://github.com/grimalschi/calque">Grimalschi's calque</a>)</small>.</p>
-		<p>This Cheat Sheet was written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
+		<p>This Cheat Sheet is based on one written by <a target="_blank" href="https://github.com/keyten">Keyten</a></p>
 	</div>
 	<script>const remote = require('@electron/remote');</script>
 	<script src="theme.js"></script>

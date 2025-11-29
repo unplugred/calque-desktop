@@ -28,6 +28,8 @@ body {
 	color: var(--foreground);
 	font-family: 'Oxygen Mono', monospace;
 	overflow: hidden;
+	height: 100vh;
+	position: relative;
 }
 
 .top {
@@ -35,16 +37,34 @@ body {
 	width: calc(100vw - 65px);
 	height: 20px;
 	position: fixed;
+	z-index: 10;
 }
 
 .interface {
 	border-radius: 10px;
 	background-color: var(--background);
-	width: calc(100vw - 40px);
-	height: calc(100vh - 40px);
+	width: calc(100% - 40px);
+	height: calc(100% - 40px);
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding: 20px;
+	position: absolute;
+}
+
+.line {
+	color: var(--markup);
+}
+
+.input, .output {
+	display: inline-block;
+}
+
+.input {
+	color: var(--foreground);
+}
+
+.output {
+	color: var(--results);
 }
 
 a {
