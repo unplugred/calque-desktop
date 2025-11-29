@@ -1,6 +1,11 @@
 var plot = [];
+var hastime = false;
 
 math.import({
+	time: function() {
+		hastime = true;
+		return performance.now()/1000;
+	},
 	x: math.evaluate("range(-1,1,.01)"),
 	plot: math.typed('plot', {
 		'Array': function(a) {
@@ -32,6 +37,18 @@ math.import({
 	divide: math.dotDivide,
 	pow: math.dotPow
 },{override:true});
+
+function update(timestamp) {
+	if(hastime) {
+		calque.recalc();
+		calque.readSelection();
+		calque.repaint();
+		requestAnimationFrame(update);
+	} else {
+		setTimeout(update,500);
+	}
+}
+requestAnimationFrame(update);
 
 var canvas = document.getElementById("canvas");
 var interf = document.getElementsByClassName("interface")[0];

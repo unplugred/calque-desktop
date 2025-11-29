@@ -96,9 +96,11 @@
         var selectionEnd = calque.inputEl.selectionEnd;
         if (raw !== calque.raw || selectionStart !== calque.selectionStart || selectionEnd !== calque.selectionEnd) {
             calque.raw = raw;
-            calque.recalc();
-            calque.readSelection();
-            calque.repaint();
+            if(!hastime) {
+                calque.recalc();
+                calque.readSelection();
+                calque.repaint();
+            }
 
             localStorage.setItem("input", calque.raw);
         }
@@ -110,6 +112,7 @@
         calque.lines = [];
 
         plot = [];
+        hastime = false;
         var scope = {
             last: null
         };
@@ -182,8 +185,6 @@
                 scope.last = line.result;
             }
         });
-
-        drawplot();
     };
 
     Calque.prototype.readActiveLine = function () {
@@ -376,11 +377,8 @@
                         data = "["+math.round(line.result[0], 10).toString()+" ... "+math.round(line.result[line.result.length-1], 10).toString()+"]";
                     else
                         data = "["+line.result.toString().replace(',',', ')+"]";
-                } else if (typeof line.result === 'object' && line.result._data.length !== undefined) {
-                    if(line.result._data.length >= 10)
-                        data = "["+math.round(line.result._data[0], 10).toString()+" ... "+math.round(line.result._data[line.result._data.length-1], 10).toString()+"]";
-                    else
-                        data = line.result.toString();
+                } else if (typeof line.result === 'object' && line.result._data !== undefined && line.result._data.length !== undefined && line.result._data.length >= 10) {
+					data = "["+math.round(line.result._data[0], 10).toString()+" ... "+math.round(line.result._data[line.result._data.length-1], 10).toString()+"]";
                 } else {
                     data = line.result.toString();
                 }
@@ -400,6 +398,8 @@
         });
 
         calque.outputEl.innerHTML = html;
+
+        drawplot();
     };
 
     window.Calque = Calque;
