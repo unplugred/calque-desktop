@@ -2,6 +2,21 @@ var plot = [];
 var hastime = false;
 
 math.import({
+	pingpong: math.typed('pingpong', {
+		'number': function(a) {
+			return math.abs(math.mod((a-1)/2,1)*2-1);
+		},
+		'number, number': function(a, b) {
+			if(b == 0) return 0;
+			return math.abs(math.mod((a-b)/(b*2),1)*b*2-b);
+		},
+		'Array': function(a) {
+			return math.map(a, n => math.abs(math.mod((n-1)/2,1)*2-1));
+		},
+		'Array, number': function(a, b) {
+			return math.map(a, n => math.abs(math.mod((n-b)/(b*2),1)*b*2-b));
+		}
+	}),
 	time: function() {
 		hastime = true;
 		return performance.now()/1000;
