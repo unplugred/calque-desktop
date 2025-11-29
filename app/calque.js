@@ -373,12 +373,19 @@
                 if (typeof line.result === 'number') {
                     data = math.round(line.result, 10).toString();
                 } else if (Array.isArray(line.result)) {
-                    if(line.result.length >= 10)
-                        data = "["+math.round(line.result[0], 10).toString()+" ... "+math.round(line.result[line.result.length-1], 10).toString()+"]";
-                    else
-                        data = "["+line.result.toString().replace(',',', ')+"]";
+                    if (line.result.length >= 10) {
+                        if (isNaN(line.result[0]) || isNaN(line.result[line.result.length-1]))
+                            data = "[" + line.result[0].toString() + " ... " + line.result[line.result.length-1].toString() + "]";
+                        else
+                            data = "[" + math.round(line.result[0], 10).toString() + " ... " + math.round(line.result[line.result.length-1], 10).toString() + "]";
+                    } else {
+                        data = "[" + line.result.toString().replace(',', ', ') + "]";
+                    }
                 } else if (typeof line.result === 'object' && line.result._data !== undefined && line.result._data.length !== undefined && line.result._data.length >= 10) {
-					data = "["+math.round(line.result._data[0], 10).toString()+" ... "+math.round(line.result._data[line.result._data.length-1], 10).toString()+"]";
+                    if (isNaN(line.result._data[0]) || isNaN(line.result._data[line.result.length-1]))
+                        data = "[" + line.result._data[0].toString() + " ... " + line.result._data[line.result._data.length-1].toString() + "]";
+                    else
+                        data = "[" + math.round(line.result._data[0], 10).toString() + " ... " + math.round(line.result._data[line.result._data.length-1], 10).toString() + "]";
                 } else {
                     data = line.result.toString();
                 }
