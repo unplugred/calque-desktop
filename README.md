@@ -57,9 +57,11 @@ last + 1
 
 CSS overrides can be done by creating a file at:
 
-- ~/config/Calque/theme.css on Linux
+- ~/.config/Calque/theme.css on Linux
 
 - %appdata%/Calque/theme.css on Windows
+
+- ~/Library/Application Support/Calque/theme.css on MacOS
 
 Themes can be changed via the right click menu.
 
