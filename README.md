@@ -87,7 +87,7 @@ Zoom out: Ctrl+Minus
 
 - Mac codesigning
 
-- Installers
+- Currency conversion
 
 ## Technologies
 

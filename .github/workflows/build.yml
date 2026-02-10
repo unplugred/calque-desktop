@@ -52,3 +52,21 @@ jobs:
         name: Calque ${{ matrix.name }}
         path: app/dist/Calque-${{ matrix.folder }}
         compression-level: 9
+
+    - name: installer
+      id: installer
+      if: startsWith(matrix.os, 'windows')
+      run: |
+        iscc "innosetup.iss"
+
+    - uses: actions/upload-artifact@v4
+      if: startsWith(matrix.os, 'windows')
+      with:
+        name: Calque ${{ matrix.name }} Installer
+        path: "Output/Calque Installer.exe"
+        compression-level: 9
+
+    - name: cleanup
+      id: cleanup
+      run: |
+        rm -r app/dist/*
