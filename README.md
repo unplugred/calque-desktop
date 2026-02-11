@@ -1,15 +1,13 @@
-<p align="center"><img src="resources/logo.png" height="70px"><br/><b>The desktop port of Calque, the reactive calculator</b></p>
+<p align="center"><img src="resources/logo.png" height="70px"><br/><b>the desktop port of calque, the reactive calculator</b></p>
 
-Cliche screenshot on top of a royalty free mountain picure:
+<p align="center"><img src="resources/screenshot.png" title="background image by konstantin kleine on unsplash"></p>
 
-<p align="center"><img src="resources/screenshot.png" title="Background image by Konstantin Kleine on Unsplash"></p>
+## download
 
-## Download
-
-The software can be downloaded <a href="https://github.com/unplugred/calque-desktop/releases">from the Releases tab</a>
+the software can be downloaded <a href="https://github.com/unplugred/calque-desktop/releases">from the releases tab</a>
 and a demo can be <a href="https://unplugred.github.io/calque-desktop/">tried here</a>
 
-## Expressions
+## expressions
 
 ```
 2 + 2 * 2
@@ -18,7 +16,7 @@ sqrt(3^2 + 4^2)
 cos(45 deg)
 ```
 
-## Variables
+## variables
 
 ```
 a = 25
@@ -26,7 +24,7 @@ b = a * 2
 postal code = 1122
 ```
 
-## Summing lists
+## summing lists
 
 ```
 animals:
@@ -39,62 +37,66 @@ plants:
     carrots = 10
 ```
 
-## Functions
+## functions
 
 ```
 pow2(x) = x ^ 2
 pow2(6)
 ```
 
-## Last result
+## last result
 
 ```
 2 * 2
 last + 1
 ```
 
-## Themes
+## themes
 
 CSS overrides can be done by creating a file at:
 
-- ~/.config/Calque/theme.css on Linux
+- ~/.config/Calque/theme.css on linux
 
-- %appdata%/Calque/theme.css on Windows
+- %appdata%/Calque/theme.css on windows
 
-- ~/Library/Application Support/Calque/theme.css on MacOS
+- ~/Library/Application Support/Calque/theme.css on macos
 
-Themes can be changed via the right click menu.
+themes can be changed via the right click menu.
 
 <p align="center"><img src="resources/themes.png"></p>
 
-## Keys
+## keys
 
-Duplicate line or selection: Ctrl+D
+duplicate line or selection: ctrl+d
 
-Change selected number: Up/Down
+change selected number: up/down
 
-Change selected number 10x: Shift+Up/Down
+change selected number 10x: shift+up/down
 
-Change indent: Tab/Shift+Tab
+change indent: tab/shift+tab
 
-Zoom in: Ctrl+Shift+Plus
+zoom in: ctrl+shift+plus
 
-Zoom out: Ctrl+Minus
+zoom out: ctrl+minus
 
-## To do
+## to do
 
-- File open / save / open as / save as
+- file open / save / open as / save as
 
-- Mac codesigning
+- mac codesigning
 
-- Currency conversion
+- currency conversion
 
-## Technologies
+## technologies
 
-Fork of Calque:
+fork of calque:
 
 https://github.com/grimalschi/calque
 
-Using Math.js:
+using math.js:
 
 https://github.com/grimalschi/mathjs
+
+## license
+
+everything is under MIT except for the website picture which i reserve the rights for

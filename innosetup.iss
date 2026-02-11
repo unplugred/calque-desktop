@@ -16,15 +16,15 @@ DisableReadyPage=false
 DisableWelcomePage=no
 LanguageDetectionMethod=uilanguage
 OutputBaseFilename=Calque Installer
-SetupIconFile=dist\install.ico
+SetupIconFile=resources\install.ico
 ShowLanguageDialog=no
 VersionInfoCompany=UnplugRed
 VersionInfoProductName=Calque
 VersionInfoProductVersion=1.0
 VersionInfoVersion=1.0
 WizardImageStretch=false
-;WizardImageFile=assets\image\calque.bmp
-;WizardSmallImageFile=assets\smallimage\calque.bmp
+WizardImageFile=resources\install.bmp
+WizardSmallImageFile=resources\smallinstall.bmp
 
 [Files]
 Source: "app\dist\*"; DestDir: {app}; Flags: recursesubdirs ignoreversion

@@ -32,7 +32,7 @@ app.on('ready', function(){
 function openwin(){
 	global.win = new BrowserWindow({
 		title: "Calque",
-		icon: "icons/icon64.png",
+		icon: "icons/icon_256.png",
 		transparent: true,
 		frame: false,
 		roundedCorners: false,
