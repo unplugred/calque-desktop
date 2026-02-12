@@ -4,11 +4,11 @@
 	"author": "unplugred",
 	"version": "1.5.0",
 	"devDependencies": {
-		"@electron/packager": "github:electron/packager",
-		"electron": "37.7.0"
+		"@electron/packager": "^19.0.3",
+		"electron": "^40.4.0"
 	},
 	"dependencies": {
-		"@electron/remote": "^2.1.2"
+		"@electron/remote": "^2.1.3"
 	},
 	"main": "run.js",
 	"scripts": {
