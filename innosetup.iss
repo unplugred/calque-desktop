@@ -22,9 +22,9 @@ VersionInfoCompany=UnplugRed
 VersionInfoProductName=Calque
 VersionInfoProductVersion=1.0
 VersionInfoVersion=1.0
-WizardImageStretch=false
-WizardImageFile=resources\install.bmp
-WizardSmallImageFile=resources\smallinstall.bmp
+WizardImageStretch=true
+WizardImageFile=resources\install.png
+WizardSmallImageFile=resources\smallinstall.png
 
 [Files]
 Source: "app\dist\*"; DestDir: {app}; Flags: recursesubdirs ignoreversion
