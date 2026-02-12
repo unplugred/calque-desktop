@@ -44,6 +44,11 @@ jobs:
         cd app
         npm install
         npm run build-${{ matrix.id }}
+
+    - name: build windows
+      id: build-windows
+      if: startsWith(matrix.os, 'windows')
+      run: |
         mv app/dist/Calque-${{ matrix.folder }}/* app/dist/
         rmdir app/dist/Calque-${{ matrix.folder }}
 
