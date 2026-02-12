@@ -30,7 +30,7 @@ WizardSmallImageFile=resources\smallinstall.png
 Source: "app\dist\*"; DestDir: {app}; Flags: recursesubdirs ignoreversion
 [Icons]
 Name: "{userdesktop}\Calque"; Filename: "{app}\Calque.exe"; Tasks: desktopicon
-Name: "{group}\Calque"; Filename: "{group}\Calque.exe"
+Name: "{group}\Calque"; Filename: "{app}\Calque.exe"
 Name: "{group}\Uninstall Calque"; Filename: {uninstallexe}
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop icon"; GroupDescription: "Additional icons"; Flags: unchecked
