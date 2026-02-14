@@ -1,6 +1,6 @@
-<center>![screenshot](resources/og.png)</center>
+<p align="center"><img src="resources/og.png" alt="screenshot"></p>
 
-<center>**the desktop port of calque, the reactive calculator**</center>
+<p align="center"><b>the desktop port of calque, the reactive calculator</b></p>
 
 ## download
 
