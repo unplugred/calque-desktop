@@ -1,13 +1,15 @@
-<p align="center"><img src="resources/logo.png" height="70px"><br/><b>the desktop port of calque, the reactive calculator</b></p>
+<center>![screenshot](resources/og.png)</center>
 
-<p align="center"><img src="resources/screenshot.png" title="background image by konstantin kleine on unsplash"></p>
+<center>**the desktop port of calque, the reactive calculator**</center>
 
 ## download
 
 the software can be downloaded <a href="https://github.com/unplugred/calque-desktop/releases">from the releases tab</a>
 and a demo can be <a href="https://unplugred.github.io/calque-desktop/">tried here</a>
 
-## expressions
+## contains:
+
+### expressions
 
 ```
 2 + 2 * 2
@@ -16,7 +18,7 @@ sqrt(3^2 + 4^2)
 cos(45 deg)
 ```
 
-## variables
+### variables
 
 ```
 a = 25
@@ -24,7 +26,7 @@ b = a * 2
 postal code = 1122
 ```
 
-## summing lists
+### summing lists
 
 ```
 animals:
@@ -37,14 +39,14 @@ plants:
     carrots = 10
 ```
 
-## functions
+### functions
 
 ```
 pow2(x) = x ^ 2
 pow2(6)
 ```
 
-## last result
+### last result
 
 ```
 2 * 2
