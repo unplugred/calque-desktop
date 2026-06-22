@@ -4,8 +4,8 @@
 	"author": "unplugred",
 	"version": "1.5.0",
 	"devDependencies": {
-		"@electron/packager": "^19.0.3",
-		"electron": "^40.4.0"
+		"@electron/packager": "^20.0.1",
+		"electron": "^42.4.1"
 	},
 	"dependencies": {
 		"@electron/remote": "^2.1.3"
