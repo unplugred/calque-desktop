@@ -49,8 +49,8 @@ jobs:
       id: build-windows
       if: startsWith(matrix.os, 'windows')
       run: |
-        mv app/dist/Calque-${{ matrix.folder }}/* app/dist/
-        rmdir app/dist/Calque-${{ matrix.folder }}
+        mv app/dist/calque-${{ matrix.folder }}/* app/dist/
+        rmdir app/dist/calque-${{ matrix.folder }}
 
     - uses: actions/upload-artifact@v4
       with:

@@ -20,7 +20,7 @@
 			PROJECT_NAME = "calque";
 		};
 		packages.default = buildNpmPackage rec {
-			name = "Calque";
+			name = "calque";
 			version = "1.5.1";
 			src = ./app;
 			npmDepsHash = "sha256-PB/DPRusZSDfeUO4dtXu1rEwYnYVq8/pTEh/eCQxE0s=";
