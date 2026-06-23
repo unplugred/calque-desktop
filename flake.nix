@@ -23,7 +23,7 @@
 			name = "calque";
 			version = "1.5.1";
 			src = ./app;
-			npmDepsHash = "sha256-PB/DPRusZSDfeUO4dtXu1rEwYnYVq8/pTEh/eCQxE0s=";
+			npmDepsHash = "sha256-wj57jc9e/NsGG9dpdwbS3j7pwQn3v2BGivgVMVurEww=";
 
 			packageJSON = ./app/package.json;
 			nativeBuildInputs = [
