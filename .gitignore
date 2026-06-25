@@ -1,7 +1,6 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
-
 .idea/*
 node_modules
 .dir
@@ -9,3 +8,4 @@ dist
 *.log
 package-lock.json
 result
+.direnv
